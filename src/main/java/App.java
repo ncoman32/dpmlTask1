@@ -1,19 +1,15 @@
 public class App {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        final MagicSquare magicSquare = new MagicSquare(3);
-        int[][][] result = magicSquare.getResult();
+    //final MagicSquare magicSquare = new MagicSquare(3);
+    //magicSquare.simpleBackTrack(0, 0);
+    //magicSquare.printSolutions();
 
-        for (int resultNo = 0; resultNo < magicSquare.getNumberOfValidConfigurations(); resultNo++) {
-            System.out.println("Magic square found!");
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    System.out.print(result[resultNo][i][j] + " ");
-                }
-                System.out.println();
-            }
-            System.out.println();
-        }
-    }
+    final MapColoring mapColoring = new MapColoring(5, 3);
+    //mapColoring.backTrackWithAC3(0);
+    mapColoring.backTrackWithForwardChecking(0);
+    mapColoring.printSolutions();
+
+  }
 }
